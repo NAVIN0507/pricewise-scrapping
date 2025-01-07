@@ -1,12 +1,14 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    serverActions: true,
-    serverComponentsExternalPackages: ['mongoose']
-  },
-  images: {
-    domains: ['m.media-amazon.com']
-  }
-}
+import type { NextConfig } from "next";
 
-module.exports = nextConfig
+const nextConfig: NextConfig = {
+  /* config options here */
+  typescript:{
+    ignoreBuildErrors:true
+  },
+  serverExternalPackages:['mongoose'],
+  images:{
+    domains:['m.media-amazon.com']
+  }
+};
+
+export default nextConfig;
