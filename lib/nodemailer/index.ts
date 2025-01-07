@@ -80,7 +80,7 @@ const transporter = nodemailer.createTransport({
     port:2525,
     auth:{
         user:'navinofficial2005@gmail.com',
-        pass:''
+        pass:'qzegslromcothmhe'
     },
    
 })
