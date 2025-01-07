@@ -10,9 +10,9 @@ import React from 'react'
 type Props ={
   params :{id :string}
 }
-const ProductDetails = async({params :{id}} : Props) => {
-  const product : Product = await getProductById(id);
-  const similarProduct = await getSimilarProduct(id);
+const ProductDetails = async({params} : Props) => {
+  const product : Product = await getProductById(params.id);
+  const similarProduct = await getSimilarProduct(params.id);
   return (
 <div className='product-container'>
   <div className='flex gap-28 xl:flex-row flex-col'>
@@ -96,7 +96,7 @@ const ProductDetails = async({params :{id}} : Props) => {
           /> 
         </div>
       </div>
-     <Model productId={id}/>
+     <Model productId={params.id}/>
     </div>
   </div>
   <div className='flex flex-col gap-16 '>
