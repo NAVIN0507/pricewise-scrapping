@@ -3,15 +3,18 @@
 import React , {FormEvent, Fragment, useState}from 'react'
 import { Description, Dialog, DialogPanel, DialogTitle, Transition } from '@headlessui/react'
 import Image from 'next/image';
-
-const Model = () => {
+import { addUserEmailProduct } from '@/lib/actions';
+interface Props{
+    productId: string;
+}
+const Model = ({productId} :Props) => {
     let [isOpen, setIsOpen] = useState(false);
     const [isSubmiting, setIsSubmiting] = useState(false);
     const [email, setemail] = useState('');
     const handleSubmit = async (e:FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
         setIsSubmiting(true);
-
+await addUserEmailProduct(productId , email)
         setIsSubmiting(false)
         setemail('');
         closeModel();
